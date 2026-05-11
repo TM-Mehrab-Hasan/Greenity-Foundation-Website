@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hind_Siliguri } from "next/font/google";
-import Script from "next/script";
 import "../globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { getDictionary } from "@/dictionaries/get-dictionary";
@@ -47,9 +46,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-        <Script
-          id="theme-initializer"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -58,13 +55,14 @@ export default async function RootLayout({
                   var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
                   if (!theme && supportDarkMode) theme = 'dark';
                   if (theme === 'dark') document.documentElement.classList.add('dark');
+                  else document.documentElement.classList.remove('dark');
                 } catch (e) {}
               })();
             `,
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${hindSiliguri.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${hindSiliguri.variable} antialiased`} suppressHydrationWarning>
         <Navbar lang={lang} dictionary={dictionary} />
         {children}
       </body>
