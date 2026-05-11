@@ -1,0 +1,89 @@
+{
+  "common": {
+    "title": "Greenity Foundation Bangladesh",
+    "mission": "Ensuring a greener and more sustainable Bangladesh",
+    "about": "About Us",
+    "programs": "Programs",
+    "impact": "Impact",
+    "contact": "Contact",
+    "language": "Language",
+    "english": "English",
+    "bengali": "Bengali",
+    "ecoMode": "Eco Mode",
+    "lightMode": "Light Mode",
+    "location": "Uttara, Dhaka, Bangladesh"
+  },
+  "hero": {
+    "welcome": "Welcome to Greenity Foundation",
+    "subtitle": "Working together for a sustainable and green future for our nation.",
+    "plasticCounter": "Plastic bottles recycled",
+    "learnMore": "Learn More"
+  },
+  "impact": {
+    "title": "Our Impact",
+    "plasticRemoved": "Plastic Removed",
+    "treesPlanted": "Trees Planted",
+    "volunteers": "Active Volunteers"
+  },
+  "crisis": {
+    "title": "Turning the Tide on Plastic Pollution.",
+    "subtitle": "Plastic doesn't just disappear. It breaks down into microplastics, entering our food chain and destroying marine life. Our mission is to stop the flow of plastic at the source and restore our ecosystem.",
+    "reality": "The Reality",
+    "stat": "8 million tons of plastic enter our oceans every year.",
+    "points": {
+      "cleanups": "Community-led beach and river cleanups across Bangladesh.",
+      "education": "Education programs for sustainable, plastic-free living.",
+      "policy": "Policy advocacy for a nationwide ban on single-use plastics."
+    }
+  },
+  "cta": {
+    "title": "Ready to help us ensure a greener Bangladesh?",
+    "subtitle": "Join 850+ volunteers and thousands of supporters in our journey towards a sustainable future.",
+    "volunteer": "Volunteer Now",
+    "support": "Support Our Mission"
+  },
+  "footer": {
+    "rights": "© 2026 Greenity Foundation. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "about": {
+    "title": "Dedicated to a Greener Future.",
+    "mission_title": "Our Mission",
+    "mission_text": "To empower local communities in Bangladesh to take lead in environmental preservation, focusing on plastic waste reduction and reforestation.",
+    "vision_title": "Our Vision",
+    "vision_text": "A plastic-free Bangladesh where nature and progress coexist in perfect harmony, ensuring a healthy environment for generations to come.",
+    "values_title": "Our Core Values",
+    "values": {
+      "transparency": "Transparency",
+      "transparency_desc": "Every kilogram of plastic removed and every tree planted is documented and verified.",
+      "community": "Community First",
+      "community_desc": "We believe real change starts at the grassroots level.",
+      "innovation": "Eco-Innovation",
+      "innovation_desc": "Utilizing technology and creative thinking to solve environmental crises."
+    }
+  },
+  "programs": {
+    "title": "Our Active Programs",
+    "subtitle": "Concrete actions for a cleaner, greener tomorrow.",
+    "items": {
+      "beach_cleanup": "Beach & River Cleanups",
+      "beach_cleanup_desc": "Regular community-driven cleanups to remove plastic and restore the natural beauty of our coastlines.",
+      "reforestation": "1 Million Trees Project",
+      "reforestation_desc": "A nationwide initiative to plant indigenous trees and restore biodiversity in urban and rural Bangladesh.",
+      "education": "Eco-Literacy in Schools",
+      "education_desc": "Empowering the next generation with the knowledge and tools for sustainable living.",
+      "policy": "Policy Advocacy",
+      "policy_desc": "Working with local governments to implement stricter regulations on single-use plastics."
+    }
+  },
+  "contact": {
+    "title": "Let's Connect for a Greener Nation.",
+    "subtitle": "Join our mission to ensure a greener and more sustainable Bangladesh. We welcome collaborators, volunteers, and supporters.",
+    "office_title": "Office Location",
+    "email_title": "Email Us",
+    "involved_title": "Get Involved",
+    "involved_text": "Interested in volunteering or partnering with us for environmental awareness initiatives?",
+    "volunteer_button": "Become a Volunteer"
+  }
+}

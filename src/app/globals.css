@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-green: var(--primary-green);
+  --color-accent-green: var(--accent-green);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-geist-sans), var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root {
+  /* Light Mode: White Background, Green Text */
+  --background: #ffffff;
+  --foreground: #15803d; /* green-700 */
+  --primary-green: #15803d;
+  --primary-green-hover: #166534;
+  --accent-green: #22c55e;
+  --surface: #f0fdf4;
+  --border: #dcfce7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Eco Mode: Green Background, White Text */
+    --background: #15803d; /* green-700 */
+    --foreground: #ffffff;
+    --primary-green: #ffffff;
+    --primary-green-hover: #f0fdf4;
+    --accent-green: #4ade80;
+    --surface: #166534; /* green-800 */
+    --border: #166534;
+  }
+}
+
+html.dark {
+  /* Eco Mode: Green Background, White Text */
+  --background: #15803d;
+  --foreground: #ffffff;
+  --primary-green: #ffffff;
+  --primary-green-hover: #f0fdf4;
+  --accent-green: #4ade80;
+  --surface: #166534;
+  --border: #166534;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Zero-Waste Texture Overlay */
+.eco-texture {
+  position: relative;
+}
+
+.eco-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: contrast(120%) brightness(120%);
+  z-index: 1;
+}
+
+html.dark .eco-texture::before {
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* Language specific font override */
+[lang="bn"] {
+  font-family: var(--font-hind-siliguri), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+}
+
+[lang="bn"] h1, [lang="bn"] h2, [lang="bn"] h3 {
+  letter-spacing: normal;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
