@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import PlasticCounter from "@/components/Hero/PlasticCounter";
+import ImpactMap from "@/components/Impact/ImpactMap";
 
 export default async function Home({
   params,
@@ -46,14 +47,20 @@ export default async function Home({
               <div className="flex gap-4 items-center flex-col sm:flex-row mt-4 justify-center sm:justify-start">
                 <a
                   className="group rounded-full bg-foreground text-background flex items-center justify-center gap-2 hover:opacity-90 text-base sm:text-lg h-14 px-10 font-bold transition-all shadow-xl shadow-foreground/10"
+                  href={`/${lang}/donate`}
+                >
+                  {dictionary.common.donate}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </a>
+                <a
+                  className="group rounded-full bg-surface border-2 border-foreground/10 text-foreground flex items-center justify-center gap-2 hover:bg-foreground/5 text-base sm:text-lg h-14 px-10 font-bold transition-all"
                   href={`/${lang}/about`}
                 >
                   {dictionary.hero.learnMore}
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
+
 
               <div className="mt-8 flex gap-12 justify-center sm:justify-start">
                 <PlasticCounter label={dictionary.hero.plasticCounter} target={142580} />
@@ -102,6 +109,17 @@ export default async function Home({
               icon={<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}
             />
           </div>
+        </div>
+      </section>
+
+      {/* Geographic Impact Section */}
+      <section className="w-full py-24 px-8 sm:px-20 bg-background border-b border-border transition-colors duration-500">
+        <div className="max-w-6xl mx-auto flex flex-col gap-16">
+          <div className="flex flex-col gap-4 text-center sm:text-left">
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter">Local Action, Global Impact.</h2>
+            <p className="text-xl opacity-70 max-w-2xl">Explore our major cleanup sites and community hubs across Bangladesh.</p>
+          </div>
+          <ImpactMap />
         </div>
       </section>
 
@@ -168,7 +186,7 @@ export default async function Home({
               <a href={`/${lang}/contact`} className="h-16 px-10 rounded-full bg-background text-foreground font-bold text-lg flex items-center justify-center hover:opacity-90 transition-colors">
                 {dictionary.cta.volunteer}
               </a>
-              <a href={`/${lang}/contact`} className="h-16 px-10 rounded-full bg-transparent border-2 border-background/30 text-background font-bold text-lg flex items-center justify-center hover:bg-background/10 transition-colors">
+              <a href={`/${lang}/donate`} className="h-16 px-10 rounded-full bg-transparent border-2 border-background/30 text-background font-bold text-lg flex items-center justify-center hover:bg-background/10 transition-colors">
                 {dictionary.cta.support}
               </a>
             </div>

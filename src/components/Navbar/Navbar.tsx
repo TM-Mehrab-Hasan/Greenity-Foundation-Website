@@ -1,9 +1,11 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
+import { Menu, X, Heart } from 'lucide-react';
 
 export default function Navbar({ 
   lang, 
@@ -13,6 +15,12 @@ export default function Navbar({
   dictionary: any
 }) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close menu when pathname changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const redirectedPathname = (locale: string) => {
     if (!pathname) return '/';
@@ -20,6 +28,13 @@ export default function Navbar({
     segments[1] = locale;
     return segments.join('/');
   };
+
+  const navLinks = [
+    { href: `/${lang}/about`, label: dictionary.common.about },
+    { href: `/${lang}/programs`, label: dictionary.common.programs },
+    { href: `/${lang}/stories`, label: dictionary.common.stories },
+    { href: `/${lang}/contact`, label: dictionary.common.contact },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-green-700/10 dark:border-green-400/10 bg-background/80 backdrop-blur-md">
@@ -34,45 +49,86 @@ export default function Navbar({
                 height={32}
                 className="rounded-sm brightness-110"
               />
-              <span className="font-bold text-green-700 dark:text-green-500 hidden sm:block">
+              <span className="font-bold text-green-700 dark:text-green-500 hidden sm:block tracking-tighter">
                 {dictionary.common.title}
               </span>
             </Link>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="hidden md:flex items-center gap-6">
-              <Link href={`/${lang}/about`} className="text-sm font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                {dictionary.common.about}
-              </Link>
-              <Link href={`/${lang}/programs`} className="text-sm font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                {dictionary.common.programs}
-              </Link>
-              <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                {dictionary.common.contact}
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-4 border-l border-green-700/10 dark:border-green-400/10 pl-6 ml-2">
-              <a
-                href="https://www.facebook.com/Greenity.Foundation.Bangladesh/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Greenity Foundation Bangladesh on Facebook"
-                className="text-green-700 dark:text-green-400 hover:opacity-70 transition-opacity"
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.href}
+                href={link.href} 
+                className="text-sm font-bold uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-              </a>
+                {link.label}
+              </Link>
+            ))}
+            <Link 
+              href={`/${lang}/donate`}
+              className="px-4 py-2 bg-foreground text-background rounded-full text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:scale-105 transition-transform"
+            >
+              <Heart className="w-3 h-3 fill-current" />
+              {dictionary.common.donate}
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-4 border-l border-green-700/10 dark:border-green-400/10 pl-4 ml-2">
               <ThemeToggle dictionary={dictionary} />
               <Link
                 href={redirectedPathname(lang === 'en' ? 'bn' : 'en')}
-                className="text-sm font-semibold text-green-700 dark:text-green-400 hover:opacity-80 transition-opacity"
+                className="text-xs font-bold uppercase tracking-widest text-green-700 dark:text-green-400 hover:opacity-80 transition-opacity"
               >
-                {lang === 'en' ? 'বাংলা' : 'English'}
+                {lang === 'en' ? 'BN' : 'EN'}
               </Link>
             </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="md:hidden p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`
+        fixed inset-0 top-16 bg-background z-40 md:hidden transition-all duration-500 ease-in-out eco-texture
+        ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}
+      `}>
+        <div className="flex flex-col p-8 gap-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.href}
+              href={link.href} 
+              className="text-4xl font-black tracking-tighter text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link 
+            href={`/${lang}/donate`}
+            className="text-4xl font-black tracking-tighter text-green-600 dark:text-green-400 flex items-center gap-4"
+          >
+            {dictionary.common.donate}
+            <Heart className="w-8 h-8 fill-current" />
+          </Link>
+          
+          <div className="mt-auto pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-8">
+             <ThemeToggle dictionary={dictionary} />
+             <Link
+                href={redirectedPathname(lang === 'en' ? 'bn' : 'en')}
+                className="text-lg font-bold uppercase tracking-widest"
+              >
+                {lang === 'en' ? 'Bengali (বাংলা)' : 'English (EN)'}
+              </Link>
           </div>
         </div>
       </div>

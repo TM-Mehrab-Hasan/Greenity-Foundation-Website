@@ -11,7 +11,35 @@
     "bengali": "Bengali",
     "ecoMode": "Eco Mode",
     "lightMode": "Light Mode",
-    "location": "Uttara, Dhaka, Bangladesh"
+    "location": "Uttara, Dhaka, Bangladesh",
+    "donate": "Donate",
+    "stories": "Stories"
+  },
+  "stories": {
+    "title": "Stories of Change",
+    "subtitle": "Real impact, real voices. Explore how our community is transforming Bangladesh's landscape.",
+    "read_more": "Read Story",
+    "back": "Back to Stories",
+    "author": "By",
+    "no_stories": "New stories are being documented. Check back soon."
+  },
+  "donate": {
+    "title": "Empower Change",
+    "subtitle": "Your contribution directly funds plastic removal, reforestation, and community education in Bangladesh.",
+    "frequency_one_time": "One-time",
+    "frequency_monthly": "Monthly",
+    "select_amount": "Select Amount",
+    "custom_amount": "Custom Amount",
+    "amount_placeholder": "Enter amount",
+    "currency": "BDT",
+    "personal_info": "Personal Information",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "anonymous": "Donate Anonymously",
+    "submit": "Proceed to Payment",
+    "secure_notice": "Your donation is secure and encrypted.",
+    "impact_notice": "Every 1,000 BDT removes 5kg of plastic from our oceans."
   },
   "hero": {
     "welcome": "Welcome to Greenity Foundation",
