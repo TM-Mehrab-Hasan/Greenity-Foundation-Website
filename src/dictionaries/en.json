@@ -113,5 +113,27 @@
     "involved_title": "Get Involved",
     "involved_text": "Interested in volunteering or partnering with us for environmental awareness initiatives?",
     "volunteer_button": "Become a Volunteer"
+  },
+  "volunteer": {
+    "title": "Join the Movement",
+    "subtitle": "Become a catalyst for environmental change. Your skills and passion can help us restore Bangladesh's natural beauty.",
+    "form": {
+      "personal_info": "Personal Information",
+      "full_name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "location": "Current City/Location",
+      "skills_interest": "Skills & Interests",
+      "interests": "Areas of Interest",
+      "interest_cleanup": "Beach & River Cleanups",
+      "interest_trees": "Tree Planting & Reforestation",
+      "interest_edu": "Environmental Education",
+      "interest_policy": "Policy & Advocacy",
+      "message": "Why do you want to join Greenity?",
+      "submit": "Submit Application",
+      "success_title": "Application Received!",
+      "success_message": "Thank you for your interest in joining Greenity Foundation. Our team will review your application and get in touch shortly.",
+      "back_home": "Back to Home"
+    }
   }
 }

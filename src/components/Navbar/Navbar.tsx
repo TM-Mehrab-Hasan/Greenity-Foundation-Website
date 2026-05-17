@@ -33,6 +33,7 @@ export default function Navbar({
     { href: `/${lang}/about`, label: dictionary.common.about },
     { href: `/${lang}/programs`, label: dictionary.common.programs },
     { href: `/${lang}/stories`, label: dictionary.common.stories },
+    { href: `/${lang}/volunteer`, label: dictionary.cta.volunteer },
     { href: `/${lang}/contact`, label: dictionary.common.contact },
   ];
 
@@ -49,7 +50,7 @@ export default function Navbar({
                 height={32}
                 className="rounded-sm brightness-110"
               />
-              <span className="font-bold text-green-700 dark:text-green-500 hidden sm:block tracking-tighter">
+              <span className="font-bold text-white hidden sm:block tracking-tighter">
                 {dictionary.common.title}
               </span>
             </Link>

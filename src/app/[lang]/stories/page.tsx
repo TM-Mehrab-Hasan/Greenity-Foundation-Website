@@ -30,55 +30,95 @@ export default async function StoriesPage({
           </p>
         </section>
 
-        {/* Stories Grid */}
+        {/* Stories Content */}
         {stories.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {stories.map((story) => (
-              <Link 
-                key={story.slug}
-                href={`/${lang}/stories/${story.slug}`}
-                className="group flex flex-col bg-surface rounded-[2.5rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5"
-              >
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={story.image}
-                    alt={story.title}
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+          <div className="flex flex-col gap-12">
+            {/* Featured Story */}
+            <Link
+              href={`/${lang}/stories/${stories[0].slug}`}
+              className="group relative flex flex-col lg:flex-row bg-surface rounded-[3rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5 animate-in fade-in slide-in-from-bottom-8 duration-1000"
+            >
+              <div className="relative h-80 lg:h-auto lg:w-3/5 overflow-hidden">
+                <Image
+                  src={stories[0].image}
+                  alt={stories[0].title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent lg:bg-gradient-to-r"></div>
+              </div>
+              <div className="p-10 lg:p-16 flex flex-col justify-center gap-6 lg:w-2/5 relative z-10">
+                <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-primary-green">
+                  <span className="px-3 py-1 bg-foreground text-background rounded-full">Featured Story</span>
+                  <span>{new Date(stories[0].date).getFullYear()}</span>
                 </div>
-                
-                <div className="p-8 flex flex-col flex-1 gap-4">
-                  <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest opacity-40">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {new Date(story.date).toLocaleDateString(lang === 'bn' ? 'bn-BD' : 'en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                    </span>
-                  </div>
-                  
-                  <h2 className="text-2xl font-black tracking-tight leading-tight group-hover:text-primary-green transition-colors">
-                    {story.title}
-                  </h2>
-                  
-                  <p className="text-sm opacity-70 leading-relaxed line-clamp-3">
-                    {story.excerpt}
-                  </p>
-                  
-                  <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-foreground group-hover:translate-x-2 transition-transform">
-                    {dictionary.stories.read_more}
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                <h2 className="text-4xl lg:text-5xl font-black tracking-tighter leading-none group-hover:text-primary-green transition-colors">
+                  {stories[0].title}
+                </h2>
+                <p className="text-lg opacity-70 leading-relaxed">
+                  {stories[0].excerpt}
+                </p>
+                <div className="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-foreground group-hover:translate-x-2 transition-transform">
+                  {dictionary.stories.read_more}
+                  <ArrowRight className="w-5 h-5" />
                 </div>
-              </Link>
-            ))}
+              </div>
+            </Link>
+
+            {/* Grid for remaining stories */}
+            {stories.length > 1 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {stories.slice(1).map((story, index) => (
+                  <Link
+                    key={story.slug}
+                    href={`/${lang}/stories/${story.slug}`}
+                    className="group flex flex-col bg-surface rounded-[2.5rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5 animate-in fade-in slide-in-from-bottom-8 duration-700"
+                    style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'both' }}
+                  >
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <Image
+                        src={story.image}
+                        alt={story.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+                    </div>
+
+                    <div className="p-8 flex flex-col flex-1 gap-4">
+                      <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest opacity-40">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {new Date(story.date).toLocaleDateString(lang === 'bn' ? 'bn-BD' : 'en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </span>
+                      </div>
+
+                      <h2 className="text-2xl font-black tracking-tight leading-tight group-hover:text-primary-green transition-colors line-clamp-2">
+                        {story.title}
+                      </h2>
+
+                      <p className="text-sm opacity-70 leading-relaxed line-clamp-3">
+                        {story.excerpt}
+                      </p>
+
+                      <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-foreground group-hover:translate-x-2 transition-transform">
+                        {dictionary.stories.read_more}
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        ) : (
-          <div className="py-20 text-center border-2 border-dashed border-border rounded-[3rem]">
+        ) : (          <div className="py-20 text-center border-2 border-dashed border-border rounded-[3rem]">
             <p className="text-xl font-bold opacity-30 uppercase tracking-widest">
               {dictionary.stories.no_stories}
             </p>

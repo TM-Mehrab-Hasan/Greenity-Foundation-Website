@@ -67,72 +67,78 @@ export default async function Home({
               </div>
             </div>
 
-            <div className="relative aspect-square sm:aspect-video lg:aspect-square w-full">
+            <div className="relative aspect-square sm:aspect-video lg:aspect-square w-full group">
               <div className="absolute inset-0 bg-foreground/5 rounded-3xl -rotate-3 transition-transform hover:rotate-0 duration-500"></div>
               <div className="relative h-full w-full overflow-hidden rounded-3xl shadow-2xl border border-foreground/10">
                 <Image
                   src="/banner.png"
                   alt="Greenity Foundation Banner"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover scale-105 hover:scale-100 transition-transform duration-700"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+
+                {/* Biological Callout Style Points */}
+                <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full border-2 border-green-500 animate-pulse shadow-sm"></div>
+                <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white rounded-full border-2 border-green-500 animate-pulse shadow-sm delay-700"></div>
               </div>
             </div>
-          </div>
-        </main>
-      </section>
+            </div>
+            </main>
+            </section>
 
-      {/* Impact Section */}
-      <section className="w-full py-24 px-8 sm:px-20 bg-surface transition-colors duration-500 border-y border-border relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col gap-4 mb-16 items-center sm:items-start">
+            {/* Impact Section */}
+            <section className="w-full py-24 px-8 sm:px-20 bg-surface transition-colors duration-500 border-y border-border relative overflow-hidden">      
+            <div className="max-w-6xl mx-auto relative z-10">
+            <div className="flex flex-col gap-4 mb-16 items-center sm:items-start animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{dictionary.impact.title}</h2>
             <div className="h-1.5 w-20 bg-foreground rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ImpactCard 
-              value="500kg+" 
-              label={dictionary.impact.plasticRemoved} 
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <ImpactCard
+              value="500kg+"
+              label={dictionary.impact.plasticRemoved}
               icon={<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />}
             />
-            <ImpactCard 
-              value="12,000" 
-              label={dictionary.impact.treesPlanted} 
+            <ImpactCard
+              value="12,000"
+              label={dictionary.impact.treesPlanted}
               icon={<path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />}
             />
-            <ImpactCard 
-              value="850" 
-              label={dictionary.impact.volunteers} 
-              icon={<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}
+            <ImpactCard
+              value="850"
+              label={dictionary.impact.volunteers}
+              icon={<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}       
             />
-          </div>
-        </div>
-      </section>
+            </div>
+            </div>
+            </section>
 
-      {/* Geographic Impact Section */}
-      <section className="w-full py-24 px-8 sm:px-20 bg-background border-b border-border transition-colors duration-500">
-        <div className="max-w-6xl mx-auto flex flex-col gap-16">
-          <div className="flex flex-col gap-4 text-center sm:text-left">
+            {/* Geographic Impact Section */}
+            <section className="w-full py-24 px-8 sm:px-20 bg-background border-b border-border transition-colors duration-500">
+            <div className="max-w-6xl mx-auto flex flex-col gap-16">
+            <div className="flex flex-col gap-4 text-center sm:text-left animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-4xl sm:text-6xl font-black tracking-tighter">Local Action, Global Impact.</h2>
             <p className="text-xl opacity-70 max-w-2xl">Explore our major cleanup sites and community hubs across Bangladesh.</p>
-          </div>
-          <ImpactMap />
-        </div>
-      </section>
+            </div>
+            <ImpactMap />
+            </div>
+            </section>
 
-      {/* Crisis vs Solution Section */}
-      <section className="w-full py-24 px-8 sm:px-20 bg-background transition-colors duration-500">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1 relative group">
-            <div className="absolute -inset-4 bg-foreground/5 rounded-[2rem] scale-95 group-hover:scale-100 transition-transform duration-500"></div>
+            {/* Crisis vs Solution Section */}
+            <section className="w-full py-24 px-8 sm:px-20 bg-background transition-colors duration-500">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative group animate-in fade-in slide-in-from-left-8 duration-1000">
+            <div className="absolute -inset-4 bg-foreground/5 rounded-[2rem] scale-95 group-hover:scale-100 transition-transform duration-500"></div> 
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-foreground/10">
-              <Image 
-                src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&q=80&w=1000" 
-                alt="Plastic Pollution Crisis" 
-                fill 
+              <Image
+                src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&q=80&w=1000"
+                alt="Plastic Pollution Crisis"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-background/80 to-transparent">
@@ -140,10 +146,9 @@ export default async function Home({
                 <p className="text-foreground text-xl font-bold">{dictionary.crisis.stat}</p>
               </div>
             </div>
-          </div>
+            </div>
 
-          <div className="order-1 lg:order-2 flex flex-col gap-8">
-            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter leading-tight">
+            <div className="order-1 lg:order-2 flex flex-col gap-8 animate-in fade-in slide-in-from-right-8 duration-1000">            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter leading-tight">
               {dictionary.crisis.title.split(' ').map((word: string, i: number) => (
                 <span key={i} className={i > 3 ? 'opacity-70' : ''}>{word} </span>
               ))}
@@ -183,7 +188,7 @@ export default async function Home({
             <h2 className="text-4xl sm:text-6xl font-black tracking-tighter max-w-3xl">{dictionary.cta.title}</h2>
             <p className="text-xl opacity-80 max-w-2xl">{dictionary.cta.subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-              <a href={`/${lang}/contact`} className="h-16 px-10 rounded-full bg-background text-foreground font-bold text-lg flex items-center justify-center hover:opacity-90 transition-colors">
+              <a href={`/${lang}/volunteer`} className="h-16 px-10 rounded-full bg-background text-foreground font-bold text-lg flex items-center justify-center hover:opacity-90 transition-colors">
                 {dictionary.cta.volunteer}
               </a>
               <a href={`/${lang}/donate`} className="h-16 px-10 rounded-full bg-transparent border-2 border-background/30 text-background font-bold text-lg flex items-center justify-center hover:bg-background/10 transition-colors">

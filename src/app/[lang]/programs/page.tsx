@@ -1,5 +1,7 @@
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import Image from "next/image";
+import Link from "next/link";
+import OptimizedPattern from "@/components/Common/OptimizedPattern";
 
 export default async function Programs({
   params,
@@ -27,34 +29,42 @@ export default async function Programs({
 
         {/* Programs Grid */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProgramCard 
+          <ProgramCard
             title={dictionary.programs.items.beach_cleanup}
             description={dictionary.programs.items.beach_cleanup_desc}
-            image="https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&q=80&w=800"
+            pattern="waves"
             tag="Direct Action"
+            index={0}
+            lang={lang}
           />
-          <ProgramCard 
+          <ProgramCard
             title={dictionary.programs.items.reforestation}
             description={dictionary.programs.items.reforestation_desc}
-            image="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+            pattern="leaves"
             tag="Restoration"
+            index={1}
+            lang={lang}
           />
-          <ProgramCard 
+          <ProgramCard
             title={dictionary.programs.items.education}
             description={dictionary.programs.items.education_desc}
-            image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800"
+            pattern="dots"
             tag="Awareness"
+            index={2}
+            lang={lang}
           />
-          <ProgramCard 
+          <ProgramCard
             title={dictionary.programs.items.policy}
             description={dictionary.programs.items.policy_desc}
-            image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+            pattern="grid"
             tag="Advocacy"
+            index={3}
+            lang={lang}
           />
         </section>
       </main>
 
-      <footer className="w-full py-12 px-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-6 text-sm opacity-50">
+      <footer className="w-full py-12 px-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-6 text-sm opacity-50">   
         <div className="flex items-center gap-2">
           <Image src="/logo.jpg" alt="Logo" width={24} height={24} className="grayscale" />
           <p>{dictionary.footer.rights} {dictionary.common.mission}.</p>
@@ -64,32 +74,49 @@ export default async function Programs({
   );
 }
 
-function ProgramCard({ title, description, image, tag }: { title: string, description: string, image: string, tag: string }) {
+function ProgramCard({ 
+  title, 
+  description, 
+  pattern, 
+  tag, 
+  index,
+  lang
+}: { 
+  title: string, 
+  description: string, 
+  pattern: 'grid' | 'dots' | 'waves' | 'leaves', 
+  tag: string, 
+  index: number,
+  lang: string
+}) {
   return (
-    <div className="group relative bg-background rounded-[2rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5">
-      <div className="relative h-64 w-full">
-        <Image 
-          src={image} 
-          alt={title} 
-          fill 
-          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-        />
+    <Link
+      href={`/${lang}/stories`}
+      className="group relative bg-surface rounded-[2rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5 flex flex-col min-h-[400px] animate-in fade-in slide-in-from-bottom-8 duration-700"
+      style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
+    >
+      <div className="relative h-48 w-full bg-foreground/5 overflow-hidden">
+        <OptimizedPattern type={pattern} className="opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+        
+        {/* Biological Callout Point */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full animate-pulse shadow-sm"></div>     
+
         <div className="absolute top-6 left-6 px-3 py-1 rounded-full bg-background/80 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-foreground border border-foreground/10">
           {tag}
         </div>
       </div>
-      <div className="p-10 flex flex-col gap-4">
+      <div className="p-10 flex flex-col gap-4 flex-1">
         <h3 className="text-2xl font-black tracking-tight leading-none">{title}</h3>
         <p className="opacity-70 leading-relaxed text-sm">{description}</p>
-        <div className="mt-4 pt-6 border-t border-border flex justify-between items-center">
+        <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
           <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Learn More</span>
           <div className="w-8 h-8 rounded-full bg-surface border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
