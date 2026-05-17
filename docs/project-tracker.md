@@ -1,46 +1,27 @@
-# Project Tracker: Greenity Foundation (Frontend UI Focus)
+# Greenity Foundation: Project Tracker
 
-This document tracks the evolution of the Greenity Foundation website, focusing on the "Anti-Plastic" design vision and high-quality frontend implementation.
-
-## 🎯 Vision: Digital Purity, Physical Sustainability
-*Refining the interface to be faster, cleaner, and more impactful.*
-
----
-
-## 🚀 Current Project Stage: Phase 4 (Polish & Performance)
+## 🚀 Current Project Stage: Phase 5 (Transparency & Community Engine)
 
 ### 🟢 Completed Features & Design
-- [x] **Base Layout & Theme:** Next.js 16.2.6 + Tailwind 4 foundation.
-- [x] **Eco-Mode:** Dynamic Dark/Light mode toggle with color-flipping logic.
-- [x] **Bilingual Support:** Full English/Bengali localization (i18n).
-- [x] **Plastic Counter:** Animated hero component for immediate impact.
-- [x] **Core Pages:** Home, About, Programs, Contact.
-- [x] **Responsive Navigation:** Mobile Hamburger Menu with smooth CSS transitions.
-- [x] **Donation Engine (UI Only):** Professional multi-step form with Zod validation.
-- [x] **Impact Visualization:** Custom SVG Interactive Map of Bangladesh cleanup sites.
-- [x] **MDX Storytelling:** Static "Stories of Change" system with localized content.
+- [x] **Base Layout & Theme:** Next.js 15.1.4 + Tailwind 4.
+- [x] **Eco-Mode:** Energy-saving dark mode with selective text justification.
+- [x] **Bilingual Support:** Full content parity for English and Bengali.
+- [x] **Impact Journalism:** Editorial MDX system with professional tone and biological callouts.
+- [x] **Ecological Ledger:** Transparency dashboard for resource tracking.
+- [x] **Community Impact Board:** Gamified leaderboard and badge system.
+- [x] **Trash to Treasure Gallery:** Circular economy visual catalog.
+- [x] **Program Intelligence:** Dedicated detail pages for Beach Cleanup, Reforestation, Education, and Policy.
+- [x] **Vertical Navigation:** Cleaner UI with focused Sidebar for page links.
+- [x] **Performance Hardening:** Fixed layout script errors and missing image optimizations.
 
 ### 🟡 Active Work (In Progress)
-- [ ] **Performance Hardening:** Lighthouse audit (Target 95+ across all metrics).
+- [ ] **Deployment Audit:** Final checks for Vercel edge compatibility.
+- [ ] **Data Synchronization:** Transitioning from mock data to real-time API integrations.
 
-### 🔴 Upcoming Features & Redesign
-- [ ] **Volunteer Portal UI:** Dedicated application form for engagement.
-- [ ] **Instant Navigation:** Implement `unstable_instant` exports for faster route transitions.
-- [ ] **Asset Optimization:** Evaluate replacing external images with stylized CSS/SVG patterns.
-
----
-
-## 📝 Design Notes & Decisions
-- **Decision (2026-05-14):** Pivoted to Frontend-Only scope. Hosted on Vercel.
-- **Decision (2026-05-14):** Initialize project-tracker.md to manage multi-day feature development.
-- **Decision (2026-05-14):** Use `next-mdx-remote` for 100% static storytelling to optimize Vercel hosting.
-- **Pattern:** Use `tabular-nums` for all data points.
-- **Tone:** Senior, minimal, data-driven.
+### 🔴 Upcoming Strategic Directions
+- [ ] **Progressive Web App (PWA):** Offline support for remote cleanup sites.
+- [ ] **Donation-to-Impact Tracking:** Unique ID generation for individual donors to track their specific contribution.
+- [ ] **Field Volunteer App:** Mobile-first interface for volunteers to report impact directly from the field.
 
 ---
-
-## 📅 Log
-- **2026-05-14:** Initialized project tracker. Audited Navbar and identified mobile menu gap.
-- **2026-05-14:** Refined Master Plan to focus strictly on Frontend UI Design for Vercel.
-- **2026-05-14:** Implemented Mobile Menu, Donation Form UI, and Interactive Impact Map.
-- **2026-05-14:** Implemented MDX Storytelling system with localized "Stories of Change".
+*Last Updated: May 17, 2026*

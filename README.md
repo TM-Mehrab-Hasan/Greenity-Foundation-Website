@@ -1,37 +1,34 @@
 # Greenity Foundation Website
 
-Ensuring a greener and more sustainable Bangladesh through community-led environmental action.
-
 ## Overview
-This is the official website for **Greenity Foundation Bangladesh**, a non-profit organization dedicated to environmental preservation, plastic waste reduction, and reforestation.
-
-The website is a high-performance, bilingual (English & Bengali) application built with **Next.js 15**, featuring a "Zero-Waste" minimalist design and an "Eco-Mode" (optimized dark mode).
+A high-performance, bilingual (English/Bengali) web platform for the **Greenity Foundation Bangladesh**. This platform is designed to drive environmental action through radical transparency, data-driven storytelling, and community engagement. Built with a "Digital Purity" vision, it prioritizes speed, accessibility, and physical sustainability.
 
 ## Tech Stack
-- **Framework:** [Next.js 15 (App Router)](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
-- **Fonts:** [Geist](https://vercel.com/font) (Latin) & [Hind Siliguri](https://fonts.google.com/specimen/Hind+Siliguri) (Bengali)
-- **Internationalization:** Custom dictionary-based i18n implementation.
+- **Framework:** Next.js 15.1.4 (App Router)
+- **Styling:** Tailwind CSS 4.0
+- **Language:** TypeScript
+- **Content:** Localized MDX (Stories of Change)
+- **Validation:** Zod (Donation & Volunteer Forms)
+- **Icons:** Lucide React
+- **Hosting:** Optimized for Vercel (Edge-ready)
 
-## Features
-- **Bilingual Support:** Full content parity between English and Bengali.
-- **Eco-Mode:** Energy-efficient dark mode with high-contrast accessibility.
-- **Zero-Waste Design:** Minimalist aesthetic with subtle textures and SVG-first assets.
-- **Responsive:** Optimized for all screen sizes, from mobile to desktop.
-- **Performance:** Optimized images, custom font loading, and static page generation.
+## Core Features
+- **Impact Journalism:** Data-rich, professional field reports in EN/BN with interactive "Biological Callouts" on visual assets.
+- **Ecological Ledger:** A monospaced transparency dashboard connecting funding inputs to physical ecological outputs (kilograms removed, trees planted).
+- **Community Impact Board:** A gamified volunteer recognition system with a monthly leaderboard and verified achievement badges.
+- **Trash to Treasure Gallery:** A visual catalog showcasing the circular economy transformation of waste into value.
+- **Dynamic Program Intelligence:** Dedicated deep-dive pages for every core foundation program (Beach Cleanup, Reforestation, Eco-Literacy, Policy).
+- **Eco-Mode:** Energy-efficient dark mode designed to reduce OLED power consumption.
+- **Navigation Sidebar:** A modern, focused vertical navigation system for rapid impact discovery.
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js 20+
+- Node.js 18.x or higher
 - npm or bun
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/TM-Mehrab-Hasan/Greenity-Foundation-Website.git
-   ```
+1. Clone the repository
 2. Install dependencies:
    ```bash
    npm install
@@ -41,21 +38,20 @@ The website is a high-performance, bilingual (English & Bengali) application bui
    npm run dev
    ```
 
-### Building for Production
-```bash
-npm run build
-npm run start
-```
-
 ## Project Structure
-- `src/app/[lang]`: Main application routes (i18n aware).
-- `src/components`: Reusable UI components (Navbar, Hero, etc.).
-- `src/dictionaries`: JSON translation files for English and Bengali.
-- `docs/`: Design vision and implementation plans.
-- `public/`: Static assets (logo, banner, etc.).
+- `src/app/[lang]`: Localized application routes.
+- `src/app/[lang]/programs/[slug]`: Dynamic program intelligence pages.
+- `src/app/[lang]/stories/[slug]`: Impact journalism reports (MDX).
+- `src/components`: Reusable UI components (Specialized: Dashboard, ImpactMap).
+- `src/content`: Localized MDX content for stories.
+- `src/dictionaries`: i18n translation engine (EN/BN).
+- `docs/`: Project tracker, specifications, and design visions.
 
-## Social Media
-- [Facebook](https://www.facebook.com/Greenity.Foundation.Bangladesh/)
+## Design Philosophy: Anti-Plastic Design
+The website follows the "Anti-Plastic" design vision:
+- **Minimalist:** Removing digital waste (excessive scripts/heavy images).
+- **Physical:** Using "Biological Identification" callouts to connect digital data to physical impact.
+- **Transparent:** Direct correlation between donor resources and verified environmental results.
 
-## License
-© 2026 Greenity Foundation. All rights reserved.
+---
+© 2026 Greenity Foundation. Ensuring a greener and more sustainable Bangladesh.
