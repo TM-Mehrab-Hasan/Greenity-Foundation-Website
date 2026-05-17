@@ -43,7 +43,8 @@ export default function VolunteerForm({
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.issues.forEach((issue) => {
-        fieldErrors[issue.path[0]] = issue.message;
+        const path = issue.path[0] as string;
+        fieldErrors[path] = issue.message;
       });
       setErrors(fieldErrors);
       setIsSubmitting(false);

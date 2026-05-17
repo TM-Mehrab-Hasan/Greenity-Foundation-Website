@@ -23,7 +23,8 @@ export default async function ProgramDetailPage({
   const { lang, slug } = await params;
   const dictionary = await getDictionary(lang as 'en' | 'bn');
   
-  const program = (dictionary.program_details as any)[slug];
+  const programDetails = dictionary.program_details as Record<string, any>;
+  const program = programDetails[slug];
   if (!program) notFound();
 
   const allStories = await getStories(lang as 'en' | 'bn');
