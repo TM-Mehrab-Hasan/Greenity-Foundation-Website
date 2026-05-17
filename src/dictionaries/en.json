@@ -135,5 +135,97 @@
       "success_message": "Thank you for your interest in joining Greenity Foundation. Our team will review your application and get in touch shortly.",
       "back_home": "Back to Home"
     }
+  },
+  "transparency": {
+    "title": "Ecological Ledger",
+    "subtitle": "Radical transparency in action. Track the real-time conversion of resources into verified environmental impact.",
+    "ledger_id": "Entry ID",
+    "impact_type": "Impact Type",
+    "resource_input": "Resource Input",
+    "physical_output": "Physical Output",
+    "verification": "Verification Hash",
+    "stats": {
+      "total_donated": "Total Funding Diverted",
+      "efficiency": "Operational Efficiency",
+      "verified_impact": "Total Verified Impact"
+    }
+  },
+  "gamification": {
+    "title": "Community Impact Board",
+    "subtitle": "Celebrating the individuals leading Bangladesh's environmental restoration.",
+    "leaderboard": "Impact Leaders",
+    "rank": "Rank",
+    "volunteer": "Volunteer",
+    "hours": "Hours Contributed",
+    "badges": {
+      "coastal": "Coastal Guardian",
+      "forest": "Reforestation Expert",
+      "urban": "Urban Specialist",
+      "advocate": "Policy Advocate"
+    }
+  },
+  "gallery": {
+    "title": "Trash to Treasure",
+    "subtitle": "A visual catalog of the circular economy. Witness the transformation of waste into value.",
+    "process": "Transformation Process",
+    "raw_material": "Source Material",
+    "final_product": "Recycled Output"
+  },
+  "program_details": {
+    "methodology": "Strategic Methodology",
+    "impact_metrics": "Live Impact Metrics",
+    "related_stories": "Related Field Reports",
+    "beach-cleanup": {
+      "title": "Beach & River Restoration",
+      "subtitle": "A multi-pronged strategy to extract synthetic waste from Bangladesh's vital water bodies.",
+      "methods": [
+        { "title": "Sub-Surface Extraction", "desc": "Utilizing specialized equipment to retrieve submerged waste." },
+        { "title": "Community Sweeps", "desc": "Weekly mobilization of local volunteers for surface-level cleanup." },
+        { "title": "Waste Filtration", "desc": "Precision filtering to extract secondary microplastics from sand." }
+      ],
+      "metrics": [
+        { "label": "Total Plastic Diverted", "value": "125 Tons" },
+        { "label": "Rivers Restored", "value": "12 Sites" }
+      ]
+    },
+    "reforestation": {
+      "title": "1 Million Native Trees",
+      "subtitle": "Expanding Bangladesh's carbon sinks through strategic, indigenous reforestation.",
+      "methods": [
+        { "title": "Heat Mapping", "desc": "Identifying priority urban heat zones for maximum cooling impact." },
+        { "title": "Indigenous Sourcing", "desc": "Using only native species to ensure ecological resilience." },
+        { "title": "Community Custody", "desc": "Partnering with locals to ensure long-term sapling survival." }
+      ],
+      "metrics": [
+        { "label": "Trees Planted", "value": "142,000" },
+        { "label": "Acres Restored", "value": "350" }
+      ]
+    },
+    "education": {
+      "title": "Eco-Literacy in Schools",
+      "subtitle": "Empowering the next generation with the tools for a plastic-free future.",
+      "methods": [
+        { "title": "Green Classrooms", "desc": "Integrating environmental science into local curricula." },
+        { "title": "Zero-Waste Labs", "desc": "Hands-on training in recycling and waste segregation." },
+        { "title": "Eco-Clubs", "desc": "Supporting student-led sustainability initiatives in rural schools." }
+      ],
+      "metrics": [
+        { "label": "Students Certified", "value": "15,000" },
+        { "label": "Partner Schools", "value": "120" }
+      ]
+    },
+    "policy": {
+      "title": "National Policy Advocacy",
+      "subtitle": "Bridging the gap between grassroots action and systemic legislative change.",
+      "methods": [
+        { "title": "Legal Frameworks", "desc": "Proposing bans on single-use plastics at the municipal level." },
+        { "title": "Compliance Audits", "desc": "Monitoring industrial adherence to environmental regulations." },
+        { "title": "Public Consensus", "desc": "Mobilizing nationwide support for sustainable economic policies." }
+      ],
+      "metrics": [
+        { "label": "Laws Passed", "value": "3" },
+        { "label": "Vendors Onboarded", "value": "500+" }
+      ]
+    }
   }
 }

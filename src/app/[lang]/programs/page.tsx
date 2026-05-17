@@ -36,6 +36,7 @@ export default async function Programs({
             tag="Direct Action"
             index={0}
             lang={lang}
+            slug="beach-cleanup"
           />
           <ProgramCard
             title={dictionary.programs.items.reforestation}
@@ -44,6 +45,7 @@ export default async function Programs({
             tag="Restoration"
             index={1}
             lang={lang}
+            slug="reforestation"
           />
           <ProgramCard
             title={dictionary.programs.items.education}
@@ -52,6 +54,7 @@ export default async function Programs({
             tag="Awareness"
             index={2}
             lang={lang}
+            slug="education"
           />
           <ProgramCard
             title={dictionary.programs.items.policy}
@@ -60,6 +63,7 @@ export default async function Programs({
             tag="Advocacy"
             index={3}
             lang={lang}
+            slug="policy"
           />
         </section>
       </main>
@@ -80,18 +84,20 @@ function ProgramCard({
   pattern, 
   tag, 
   index,
-  lang
+  lang,
+  slug
 }: { 
   title: string, 
   description: string, 
   pattern: 'grid' | 'dots' | 'waves' | 'leaves', 
   tag: string, 
   index: number,
-  lang: string
+  lang: string,
+  slug: string
 }) {
   return (
     <Link
-      href={`/${lang}/stories`}
+      href={`/${lang}/programs/${slug}`}
       className="group relative bg-surface rounded-[2rem] overflow-hidden border border-border hover:border-foreground/30 transition-all shadow-xl shadow-foreground/5 flex flex-col min-h-[400px] animate-in fade-in slide-in-from-bottom-8 duration-700"
       style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
     >

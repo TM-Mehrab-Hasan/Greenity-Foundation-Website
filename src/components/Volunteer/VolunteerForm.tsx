@@ -206,5 +206,4 @@ export default function VolunteerForm({
       </form>
     </div>
   );
-  );
 }

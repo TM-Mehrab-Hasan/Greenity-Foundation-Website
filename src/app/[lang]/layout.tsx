@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hind_Siliguri } from "next/font/google";
+import Script from "next/script";
 import "../globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { getDictionary } from "@/dictionaries/get-dictionary";
@@ -48,7 +49,6 @@ export default async function RootLayout({
       <head>
         <script
           id="theme-initializer"
-          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');var s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(!t&&s)t='dark';if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark')}catch(e){}})()`,
           }}

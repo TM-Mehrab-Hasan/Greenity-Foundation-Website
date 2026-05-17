@@ -68,15 +68,32 @@ export default async function About({
         </section>
 
         {/* Image/Texture Section */}
-        <section className="relative h-[400px] w-full rounded-[3rem] overflow-hidden bg-foreground animate-in fade-in zoom-in-95 duration-1000 delay-500">
+        <section className="relative h-[500px] w-full rounded-[3rem] overflow-hidden bg-foreground animate-in fade-in zoom-in-95 duration-1000 delay-500 group">
+          <Image
+            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1500"
+            alt="Ensuring a greener Bangladesh"
+            fill
+            sizes="(max-width: 1024px) 100vw, 896px"
+            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+          
           <OptimizedPattern type="leaves" color="white" opacity={0.1} />
 
           {/* Biological Callout Points */}
-          <div className="absolute top-1/3 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse shadow-sm"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full animate-pulse shadow-sm delay-500"></div>
+          <div className="absolute top-1/3 left-1/2 w-3 h-3 bg-white rounded-full border-2 border-green-500 animate-pulse shadow-sm group/callout">
+             <div className="absolute left-6 top-1/2 -translate-y-1/2 whitespace-nowrap bg-foreground text-background px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                Verified Impact
+             </div>
+          </div>
+          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-white rounded-full border-2 border-green-500 animate-pulse shadow-sm delay-500 group/callout">
+             <div className="absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap bg-foreground text-background px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                Grassroots Powered
+             </div>
+          </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-green/60 to-transparent flex items-end p-12">
-            <p className="text-background text-2xl font-bold max-w-lg">
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent flex items-end p-12 relative z-10 pointer-events-none">
+            <p className="text-white text-2xl font-bold max-w-lg text-justify">
               {dictionary.common.mission}
             </p>
           </div>
